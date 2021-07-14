@@ -10,6 +10,7 @@ before_script:
   - mkdir -p src/main/resources/static
   - cp -r scholarx-frontend/dist/. src/main/resources/static/
   - sudo rm -R scholarx-frontend
+  - cp src/main/resources/application.yml.example src/main/resources/application.yml
 script:
   - mvn clean install
 deploy:
@@ -18,5 +19,5 @@ deploy:
   app: sef-scholarx
   on:
     repo: sef-global/scholarx
-    branch: master
+    branch: deployment
   skip_cleanup: true
